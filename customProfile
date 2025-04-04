@@ -1,0 +1,43 @@
+import { Tabs, Tab } from "@vds/tabs"
+import { Title } from "@vds/typography"
+import { Breadcrumbs,BreadcrumbItem } from "@vds/breadcrumbs"
+import CustomProfileBulkUpload from "./CustomProfileBulkUpload"
+// import SingleRowAutoProfile from "./SingleRowAutoProfile"
+import CustomProfileViewEdit from "./CustomProfileViewEdit"
+import HystScript from "./HystScript"
+import styles from './CustomProfile.module.css'
+
+const AutoProfile = () => {
+  return (
+    <>
+      <div className={styles.section}>
+        <div className={styles.subHeading}>
+          <Title
+            size="medium"
+            bold={true}
+            color="#000">
+            Custom Profile
+          </Title>
+          <Breadcrumbs surface="light">
+            <BreadcrumbItem>Profiling</BreadcrumbItem>
+            <BreadcrumbItem>Custom Profile</BreadcrumbItem>
+          </Breadcrumbs>
+        </div>
+        <div className={styles.content}>
+          <Tabs orientation="horizontal" indicatorPosition="bottom" size="medium">
+            <Tab label="Submit Multiple Requests">
+              <CustomProfileBulkUpload />
+            </Tab>
+            <Tab label="View/Edit Request">
+              <CustomProfileViewEdit />
+            </Tab>
+            <Tab label="Historical Script">
+              <HystScript />
+            </Tab>
+          </Tabs>
+        </div>
+      </div>
+    </>
+  )
+}
+export default AutoProfile
